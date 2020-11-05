@@ -1,0 +1,22 @@
+<div class="row">
+    <div *ngFor="let card of cardsData; let i = index;" class="column">
+      <div class="card">
+        <div class="img-container">
+          <img style="display: block;" class="mx-auto p-0" height="200" width="200" 
+          src={{card.links.mission_patch_small}}
+          [ngClass]="{'img-container-default': !card.links.mission_patch_small, 'img-thumbnail': card.links.mission_patch_small}">
+        </div>
+        <p class="card-missionName-color pb-0 mt-2"><b>{{ card.mission_name }}</b>&nbsp;<b>#{{ card.flight_number}}</b></p>
+        <p class="pb-0"><b>Mission Id's : &nbsp;</b>
+        <span>
+          <ul>
+            <li *ngFor="let id of card.mission_id">{{id}}</li>           
+          </ul>         
+        </span>
+        </p>
+        <p class="pb-0"><b>Launch Year :&nbsp;</b><span class="card-text-color">{{ card.launch_year }}</span></p>
+        <p class="pb-0"><b>Successful Launch :&nbsp;</b><span class="card-text-color">{{ card.launch_success }}</span></p>
+        <p class="pb-0"><b>Successful Landing :&nbsp;</b><span class="card-text-color">{{ card?.launch_landing }}</span></p>
+      </div>
+    </div>
+  </div>

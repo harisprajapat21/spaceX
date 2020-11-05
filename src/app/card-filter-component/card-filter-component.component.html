@@ -1,0 +1,29 @@
+    
+    <div class="container px-1">
+      <h4>Filters</h4>
+      <div class="row mx-4 label-underline">
+        <label class="mx-auto mb-0">Launch Year</label>
+      </div>      
+      <div class="row mt-2 px-2">        
+            <div class="col-6 col-md-6 col-lg-6 pb-1" *ngFor="let year of yearButtons;let i = index;">
+                <button class="btn btn-primary btn-custom" [ngClass]="{'float-right': (i%2 !== 0)}" (click)="year.isSelected = !year.isSelected; selectedYear(year, i);" [class.active-btn]="year.isSelected">{{year.val}}</button>    
+            </div>      
+      </div>   
+      <div class="row mx-4 mt-4 label-underline">
+        <label class="mx-auto mb-0">Successful Launch</label>
+      </div>
+      <div class="row mt-2 px-2">       
+            <div class="col-6 col-md-6 col-lg-6 pb-1" *ngFor="let lnch of launchButtons;let j = index;">
+                <button  class="btn btn-custom" [ngClass]="{'float-right': (j%2 !== 0)}" (click)="lnch.isSelected = !lnch.isSelected;selectedLaunch(lnch, j);" [class.active-btn]="lnch.isSelected">{{lnch.val}}</button>    
+            </div>       
+      </div>  
+      <div class="row mx-4 mt-4 label-underline">
+        <label class="mx-auto mb-0">Successful Landing</label>
+      </div>
+      <div class="row mt-2 px-2">      
+            <div class="col-6 col-md-6 col-lg-6 pb-1" *ngFor="let lndng of landingButtons;let k = index;">
+                <button  class="btn btn-custom" [ngClass]="{'float-right': (k%2 !== 0)}" (click)="lndng.isSelected = !lndng.isSelected;selectedLanding(lndng, k);" [class.active-btn]="lndng.isSelected">{{lndng.val}}</button>    
+            </div>
+      </div>     
+    </div>
+
