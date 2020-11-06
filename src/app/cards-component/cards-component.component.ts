@@ -16,7 +16,7 @@ export class CardsComponentComponent implements OnInit, OnChanges {
 
   ngOnChanges(item:any){
     if(item &&  item.cardsData){
-      this.cardsData = ditemata.cardsData.currentValue;
+      this.cardsData = item.cardsData.currentValue;
     }
   }
 
